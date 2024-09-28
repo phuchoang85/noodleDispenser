@@ -1,12 +1,13 @@
-import { IMAGES } from '@Assets/assets';
+import Background from '@Components/Background';
+import MainNavigation from '@Src/MainNavigation';
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {SafeAreaView, StatusBar, View} from 'react-native';
 function App(): React.JSX.Element {
   return (
-    <View className="bg-black w-full h-full">
-      <Text className="text-white">aaaa</Text>
-      <Image source={IMAGES.icon}/>
-    </View>
+    <SafeAreaView style={{flex: 1}}>
+      <StatusBar barStyle="light-content" backgroundColor='rgba(0,0,0,0)' translucent />
+        <MainNavigation />
+    </SafeAreaView>
   );
 }
 

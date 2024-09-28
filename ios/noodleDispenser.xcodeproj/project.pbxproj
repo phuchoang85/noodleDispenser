@@ -33,6 +33,11 @@
 		674CBF8D670640A599993C65 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0D8479D31C24D888407CBF7 /* Nunito-SemiBoldItalic.ttf */; };
 		8C69D0389AAB4FCCAD3DCA17 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6830E6D2DC38457EADB72B51 /* Nunito-VariableFont_wght.ttf */; };
 		AD2CB552FCAB4A27B995F49E /* PaytoneOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2559A68395CA4201A44C0E44 /* PaytoneOne-Regular.ttf */; };
+		600EEF9D3B05434BA5E76016 /* SVN-Nexa Rust Extras Free.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B04E3DF57A949E398EC86D3 /* SVN-Nexa Rust Extras Free.ttf */; };
+		A89EA28258424D2C9907B154 /* SVN-Nexa Rust Handmade Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E05076AA70D40378C85422A /* SVN-Nexa Rust Handmade Extended.ttf */; };
+		AD6C1CA2DB4C4661B86A3D6F /* SVN-Nexa Rust Sans Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE142AD8BF4AD7AF80F1B0 /* SVN-Nexa Rust Sans Black.ttf */; };
+		20655C7BD3D84DEE8EC8B21C /* SVN-Nexa Rust Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D23D57B71628436D979F9660 /* SVN-Nexa Rust Script.ttf */; };
+		28866CAFC424409596FB9090 /* SVN-Nexa Rust Slab Black Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3968044B5B264C7DA23C65E3 /* SVN-Nexa Rust Slab Black Shadow.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,11 @@
 		D0D8479D31C24D888407CBF7 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Nunito-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6830E6D2DC38457EADB72B51 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Nunito-VariableFont_wght.ttf"; path = "../src/assets/fonts/Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2559A68395CA4201A44C0E44 /* PaytoneOne-Regular.ttf */ = {isa = PBXFileReference; name = "PaytoneOne-Regular.ttf"; path = "../src/assets/fonts/PaytoneOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B04E3DF57A949E398EC86D3 /* SVN-Nexa Rust Extras Free.ttf */ = {isa = PBXFileReference; name = "SVN-Nexa Rust Extras Free.ttf"; path = "../src/assets/fonts/SVN-Nexa Rust Extras Free.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8E05076AA70D40378C85422A /* SVN-Nexa Rust Handmade Extended.ttf */ = {isa = PBXFileReference; name = "SVN-Nexa Rust Handmade Extended.ttf"; path = "../src/assets/fonts/SVN-Nexa Rust Handmade Extended.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3BBE142AD8BF4AD7AF80F1B0 /* SVN-Nexa Rust Sans Black.ttf */ = {isa = PBXFileReference; name = "SVN-Nexa Rust Sans Black.ttf"; path = "../src/assets/fonts/SVN-Nexa Rust Sans Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D23D57B71628436D979F9660 /* SVN-Nexa Rust Script.ttf */ = {isa = PBXFileReference; name = "SVN-Nexa Rust Script.ttf"; path = "../src/assets/fonts/SVN-Nexa Rust Script.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3968044B5B264C7DA23C65E3 /* SVN-Nexa Rust Slab Black Shadow.ttf */ = {isa = PBXFileReference; name = "SVN-Nexa Rust Slab Black Shadow.ttf"; path = "../src/assets/fonts/SVN-Nexa Rust Slab Black Shadow.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +221,11 @@
 				D0D8479D31C24D888407CBF7 /* Nunito-SemiBoldItalic.ttf */,
 				6830E6D2DC38457EADB72B51 /* Nunito-VariableFont_wght.ttf */,
 				2559A68395CA4201A44C0E44 /* PaytoneOne-Regular.ttf */,
+				5B04E3DF57A949E398EC86D3 /* SVN-Nexa Rust Extras Free.ttf */,
+				8E05076AA70D40378C85422A /* SVN-Nexa Rust Handmade Extended.ttf */,
+				3BBE142AD8BF4AD7AF80F1B0 /* SVN-Nexa Rust Sans Black.ttf */,
+				D23D57B71628436D979F9660 /* SVN-Nexa Rust Script.ttf */,
+				3968044B5B264C7DA23C65E3 /* SVN-Nexa Rust Slab Black Shadow.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -330,6 +345,11 @@
 				674CBF8D670640A599993C65 /* Nunito-SemiBoldItalic.ttf in Resources */,
 				8C69D0389AAB4FCCAD3DCA17 /* Nunito-VariableFont_wght.ttf in Resources */,
 				AD2CB552FCAB4A27B995F49E /* PaytoneOne-Regular.ttf in Resources */,
+				600EEF9D3B05434BA5E76016 /* SVN-Nexa Rust Extras Free.ttf in Resources */,
+				A89EA28258424D2C9907B154 /* SVN-Nexa Rust Handmade Extended.ttf in Resources */,
+				AD6C1CA2DB4C4661B86A3D6F /* SVN-Nexa Rust Sans Black.ttf in Resources */,
+				20655C7BD3D84DEE8EC8B21C /* SVN-Nexa Rust Script.ttf in Resources */,
+				28866CAFC424409596FB9090 /* SVN-Nexa Rust Slab Black Shadow.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

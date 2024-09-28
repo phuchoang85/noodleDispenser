@@ -76,6 +76,26 @@
     {
       "path": "src/assets/fonts/PaytoneOne-Regular.ttf",
       "sha1": "5a2d7fbff111eda7dc7023741752f5c6dc3b1b98"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Nexa Rust Extras Free.ttf",
+      "sha1": "f84f5f9faba54b17840f4d0e88e8ad591aef6f94"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Nexa Rust Handmade Extended.ttf",
+      "sha1": "b47c1e64eb7dec503d32abeda49f831919bf6b8b"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Nexa Rust Sans Black.ttf",
+      "sha1": "974ffa6600ddd163391075c831c58ddef2d5962c"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Nexa Rust Script.ttf",
+      "sha1": "bc3a7903704050a6ad7fe96b7281be61a6d4aa0c"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Nexa Rust Slab Black Shadow.ttf",
+      "sha1": "9f82fa9d9d2a2d4cdc56c79538ecd5c85a83c95f"
     }
   ]
 }

@@ -16,10 +16,10 @@ module.exports = {
           '.ios.tsx',
         ],
         alias: {
-          '@': './src',
+          '@Src': './src',
           '@Image': './src/assets/images',
           '@Assets': './src/assets',
-          '@Component': './src/components',
+          '@Components': './src/components',
           '@Contants': './src/contants',
           '@Pages': './src/pages',
           '@Redux': './src/redux',

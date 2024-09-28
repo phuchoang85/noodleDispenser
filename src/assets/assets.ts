@@ -1,3 +1,17 @@
 export const IMAGES = {
   icon: require('@Image/logo.png'),
+  arrow_right: require('@Image/arrow_right.png'),
+  background_button: require('@Image/background_button.png'),
+  bg: require('@Image/bg.png'),
+  buttun_scan: require('@Image/buttun_scan.png'),
+  cup_one: require('@Image/cup_one.png'),
+  cup_two: require('@Image/cup_two.png'),
+  cup_three: require('@Image/cup_three.png'),
+  cup_out: require('@Image/cup_out.png'),
+  done: require('@Image/done.png'),
+  error_scan: require('@Image/error_scan.png'),
+  null_noodle: require('@Image/null_noodle.png'),
+  scan_red: require('@Image/scan_red.png'),
+  select_cup: require('@Image/select_cup.png'),
+  back_scan: require('@Image/back_scan.png'),
 };

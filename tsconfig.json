@@ -1,15 +1,15 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src/",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["/*"],
-      "@Image/*": ["assets/images/*"],
-      "@Assets/*": ["assets/*"],
-      "@Components/*": ["components/*"],
-      "@Contants/*": ["contants/*"],
-      "@Pages/*": ["pages/*"],
-      "@Redux/*": ["redux/*"],
+      "@Src/*": ["src/*"],
+      "@Image/*": ["src/assets/images/*"],
+      "@Assets/*": ["src/assets/*"],
+      "@Components/*": ["src/components/*"],
+      "@Contants/*": ["src/contants/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Redux/*": ["src/redux/*"],
     }
   }
 }
