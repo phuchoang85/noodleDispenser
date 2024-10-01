@@ -1,7 +1,8 @@
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import BackgroundInfor from '@Src/components/BackgroundInfor';
+const {width: MAX_WIDTH} = Dimensions.get('screen');
 const CameraScan = ({
   hasCameraPermission,
   onSuccess,
@@ -42,6 +43,8 @@ const styles = StyleSheet.create({
   cameraStyle: {
     height: 180,
     zIndex: 20,
+    maxWidth: 500,
+    width: MAX_WIDTH - 50,
   },
   markerStyle: {
     width: 250,
