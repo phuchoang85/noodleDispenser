@@ -14,4 +14,7 @@ export const IMAGES = {
   scan_red: require('@Image/scan_red.png'),
   select_cup: require('@Image/select_cup.png'),
   back_scan: require('@Image/back_scan.png'),
+  imageloading: require('@Image/imageloading.png'),
+  avatar_loading: require('@Image/avatar_loading.png'),
+  background_two: require('@Image/background_two.png'),
 };

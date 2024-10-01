@@ -1,8 +1,7 @@
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import BackgroundInfor from '@Src/components/BackgroundInfor';
-const {width: MAX_WIDTH } = Dimensions.get('window');
 const CameraScan = ({
   hasCameraPermission,
   onSuccess,
@@ -17,10 +16,12 @@ const CameraScan = ({
     }
   }, [hasCameraPermission]);
   return (
-    <View className='mt-3'>
+    <View className="mt-3">
       <BackgroundInfor>
         {hasCameraPermission && (
-          <View style={styles.cameraStyle} className='overflow-hidden m-1 rounded-XIII'>
+          <View
+            style={styles.cameraStyle}
+            className="overflow-hidden m-1 rounded-XIII">
             <QRCodeScanner
               reactivate={true}
               showMarker={true}
@@ -39,14 +40,13 @@ const CameraScan = ({
 
 const styles = StyleSheet.create({
   cameraStyle: {
-    width: MAX_WIDTH-50,
     height: 180,
     zIndex: 20,
   },
   markerStyle: {
     width: 250,
     height: 150,
-    borderColor:'transparent'
+    borderColor: 'transparent',
   },
 });
 
