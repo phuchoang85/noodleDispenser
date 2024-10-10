@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "174195375804",
+    "firebase_url": "https://du-an-mau-7d09f-default-rtdb.firebaseio.com",
+    "project_id": "du-an-mau-7d09f",
+    "storage_bucket": "du-an-mau-7d09f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174195375804:android:1d1b88548a7fb7c06b5ab9",
+        "android_client_info": {
+          "package_name": "com.noodledispenser"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh5iSxCzUPDwHKAe6gcumMuFB26_x07YA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174195375804:android:b9c2d636c898e4746b5ab9",
+        "android_client_info": {
+          "package_name": "com.phucabadon.alene_entry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh5iSxCzUPDwHKAe6gcumMuFB26_x07YA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

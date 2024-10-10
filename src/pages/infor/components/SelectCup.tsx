@@ -2,32 +2,29 @@ import {Text, View} from 'react-native';
 import React from 'react';
 import {DATACUP} from '../types';
 import RenderCup from './RenderCup';
+import {useAppDispatch} from '@Src/redux/useRedux';
+import {updateStatus} from '@Src/redux/selector/NoodlesSlice';
 
 const SelectCup = ({
   dataCup,
-  setDataStatusCup,
 }: {
   dataCup: DATACUP[];
-  setDataStatusCup: (data: DATACUP[]) => void;
 }) => {
+  const dispatch = useAppDispatch();
   const countCup = dataCup.reduce((first: DATACUP, second: DATACUP) => {
     return {
       ...first,
       noodleLeft: first.noodleLeft + second.noodleLeft,
     };
   });
-
-  const _handleSelectCup = (id: number) => {
-    const updatedData = dataCup.map((ele: DATACUP) =>
-      ele.id === id && ele.noodleLeft !== 0
-        ? {
-            ...ele,
-            status: !ele.status,
-          }
-        : ele,
-    );
-
-    setDataStatusCup(updatedData);
+  const _handleSelectCup = (
+    id: number,
+    noodleLeft: number,
+    status: boolean,
+  ) => {
+    if (noodleLeft !== 0) {
+      dispatch(updateStatus({id: id, status: !status}));
+    }
   };
   return (
     <>

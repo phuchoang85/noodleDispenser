@@ -2,15 +2,17 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import BackgroundInfor from '@Src/components/BackgroundInfor';
 import {IMAGES} from '@Src/assets/assets';
+import {DataState} from '@Src/redux/selector/CodeSlice';
+import {transDate} from '@Src/data/helper';
 
-const Information = () => {
+const Information = ({data}: {data: DataState}) => {
   return (
     <BackgroundInfor>
       <View className="px-3 py-2 flex-row justify-between">
         <Image
-          source={IMAGES.avatar_loading}
+          source={data?.avatar ? {uri: data?.avatar} : IMAGES.avatar_loading}
           className="w-24 h-24 rounded-full"
-          resizeMode="contain"
+          resizeMode="stretch"
         />
 
         <View className="justify-between">
@@ -31,22 +33,22 @@ const Information = () => {
           <Text
             className="max-w-[100px] font-text text-color_red_infor"
             numberOfLines={1}>
-            nameeeeeeeee
+            {data.fullName}
           </Text>
           <Text
             className="max-w-[100px] font-text text-color_red_infor"
             numberOfLines={1}>
-            12/09/2000
+            {data.birthDay && transDate(data.birthDay)}
           </Text>
           <Text
             className="max-w-[100px] font-text text-color_red_infor"
             numberOfLines={1}>
-            male
+            {data.gender}
           </Text>
           <Text
             className="max-w-[100px] font-text text-color_red_infor"
             numberOfLines={1}>
-            design
+            {data.department}
           </Text>
         </View>
       </View>

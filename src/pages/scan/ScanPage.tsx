@@ -12,20 +12,27 @@ import {IMAGES} from '@Src/assets/assets';
 import {PermissionsAndroid} from 'react-native';
 import CameraScan from './components/CameraScan';
 import PageScanError from './components/PageScanError';
-import {useNavigation} from '@react-navigation/native';
-import {RootParamList} from '@Src/MainNavigation';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useAppDispatch} from '@Src/redux/useRedux';
+import {setCode} from '@Src/redux/selector/CodeSlice';
 const ScanPage = () => {
-  const [result, setResult] = useState(null);
+  const dispatch = useAppDispatch();
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
   const [startCamera, setStartCamera] = useState(true);
-  const navigation = useNavigation<NativeStackNavigationProp<RootParamList>>();
   useEffect(() => {
     const requestCameraPermission = async () => {
       try {
         const granted = await PermissionsAndroid.check(
           PermissionsAndroid.PERMISSIONS.CAMERA,
         );
+        if (!granted) {
+          PermissionsAndroid.request(
+            PermissionsAndroid.PERMISSIONS.CAMERA,
+          ).then(granted => {
+            setHasCameraPermission(
+              granted === PermissionsAndroid.RESULTS.GRANTED,
+            );
+          });
+        }
         setHasCameraPermission(granted);
       } catch (err) {
         console.log('error:' + err);
@@ -34,22 +41,20 @@ const ScanPage = () => {
     requestCameraPermission();
   }, []);
 
-  const onSuccess = (e: any) => {
+  const onSuccess = async (e: any) => {
     try {
       if ((e.data && e.type === 'QR_CODE') || e === 0) {
         const transStringToOject = JSON.parse(e?.data);
         //{"code":"1","app":"noodleDispenser"}
         console.log('scanned data' + transStringToOject);
-        if (!result && transStringToOject?.app === 'noodleDispenser') {
-          Alert.alert(transStringToOject?.code);
-          setResult(e);
-          navigation.navigate('Infor');
+        if (transStringToOject?.app === 'noodleDispenser') {
+          dispatch(setCode(transStringToOject?.code));
           return;
         }
       }
-      setStartCamera(false);
-      console.log(e);
+      Alert.alert('Lỗi', 'Không phải mã code của app');
     } catch (error) {
+      Alert.alert('Lỗi', 'Không phải mã code của app');
       setStartCamera(false);
       console.log(error);
     }
@@ -65,11 +70,9 @@ const ScanPage = () => {
 
   return (
     <Background>
-      {startCamera || result ? (
+      {startCamera ? (
         <>
-          <Text className="font-title text-3xl text-title_red">
-            WELCOME
-          </Text>
+          <Text className="font-title text-3xl text-title_red">WELCOME</Text>
           <CameraScan
             hasCameraPermission={hasCameraPermission}
             onSuccess={onSuccess}

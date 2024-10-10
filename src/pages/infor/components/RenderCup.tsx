@@ -8,7 +8,7 @@ const RenderCup = ({
   _handleSelectCup,
 }: {
   item: DATACUP;
-  _handleSelectCup: (id: number) => void;
+  _handleSelectCup: (id: number, noodleLeft: number, status: boolean) => void;
 }) => {
   const imagereturn = () => {
     if (item.id === 1) {
@@ -21,7 +21,7 @@ const RenderCup = ({
   };
   return (
     <TouchableOpacity
-      onPress={() => _handleSelectCup(item.id)}
+      onPress={() => _handleSelectCup(item.id, item.noodleLeft, item.status)}
       className="w-20 h-36 items-center justify-center relative">
       {item.noodleLeft !== 0 ? (
         <>
@@ -30,7 +30,7 @@ const RenderCup = ({
             resizeMode="contain"
             source={imagereturn()}
           />
-          <Text className="font-payone text-xs"/>
+          <Text className="font-payone text-xs" />
         </>
       ) : (
         <>

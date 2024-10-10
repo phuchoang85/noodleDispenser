@@ -17,4 +17,7 @@ export const IMAGES = {
   imageloading: require('@Image/imageloading.png'),
   avatar_loading: require('@Image/avatar_loading.png'),
   background_two: require('@Image/background_two.png'),
+  favourite: require('@Image/favourite.png'),
+  down: require('@Image/down.png'),
+  log_out: require('@Image/log_out.png'),
 };
