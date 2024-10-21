@@ -57,10 +57,10 @@ const PageInfor = () => {
 
       const update = await data.map(ele =>
         ele.status && ele.noodleLeft !== 0
-          ? {...ele, noodleLeft: ele.noodleLeft - 1}
+          ? {...ele, noodleLeft: ele.noodleLeft - 1, status: false}
           : ele,
       );
-      dispatch(updateQuantity(update));
+      dispatch(updateData(update));
       if (selector.code.code)
         await updateInfo(selector.code.code, transformDataCup(update));
       Alert.alert('Thành công', 'Đã lưu thành công');
