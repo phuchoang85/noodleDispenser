@@ -9,7 +9,7 @@ export const getInfoUser = async (code: string) => {
       .orderByChild('code')
       .equalTo(code)
       .once('value');
-    return snapshot.val()[0];
+      return snapshot.val()[1] ? snapshot.val()[1] : snapshot.val()[Object.keys(snapshot.val())[0]];
   } catch (error) {
     console.log(error);
     return null;

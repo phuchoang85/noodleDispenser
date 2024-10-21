@@ -54,8 +54,7 @@ const PageInfor = () => {
   const submit = async () => {
     try {
       const data = selector.noodel.data;
-
-      const update = await data.map(ele =>
+      const update = await data.map(ele => 
         ele.status && ele.noodleLeft !== 0
           ? {...ele, noodleLeft: ele.noodleLeft - 1, status: false}
           : ele,
