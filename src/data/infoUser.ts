@@ -23,15 +23,13 @@ export const udpateValue = async (code: string, newNoodlesData: noodle) => {
       .orderByChild('code')
       .equalTo(code)
       .once('value', data => {
-        console.log(newNoodlesData)
         if (data.exists()) {
           const record = data.val();
-          const recordId = Object.keys(record)[0];
+          const recordId = Object.keys(record)[1] ? Object.keys(record)[1] : Object.keys(record)[0];
+          console.log(Object.keys(record))
           database()
             .ref(`user/${recordId}`)
             .update({noodles: newNoodlesData})
-            .then(data => console.log('th' + data))
-            .catch(err => console.log(err));
         } else {
           console.log('No record found with code:', code);
         }

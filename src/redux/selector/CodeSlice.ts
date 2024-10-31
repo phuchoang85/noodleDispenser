@@ -11,9 +11,9 @@ export interface DataState {
 }
 
 export interface noodle {
-  quantityTypeOne: number;
-  quantityTypeTwo: number;
-  quantityTypeThree: number;
+  quantityTypeOne: string | null;
+  quantityTypeTwo: string | null;
+  quantityTypeThree: string | null;
 }
 
 const initialState: DataState = {

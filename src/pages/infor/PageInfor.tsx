@@ -19,44 +19,30 @@ const PageInfor = () => {
   const selector = useAppSelector(state => state.root);
   const navigation = useNavigation<NativeStackNavigationProp<RootParamList>>();
   const dispatch = useAppDispatch();
+
   const transformDataCup = (
     dataCup: DATACUP[],
   ): {
-    quantityTypeOne: number;
-    quantityTypeTwo: number;
-    quantityTypeThree: number;
+    quantityTypeOne: string | null;
+    quantityTypeTwo: string | null;
+    quantityTypeThree: string | null;
   } => {
-    return dataCup.reduce(
-      (acc, item) => {
-        switch (item.id) {
-          case 1:
-            acc.quantityTypeOne += item.noodleLeft;
-            break;
-          case 2:
-            acc.quantityTypeTwo += item.noodleLeft;
-            break;
-          case 3:
-            acc.quantityTypeThree += item.noodleLeft;
-            break;
-          default:
-            break;
-        }
-        return acc;
-      },
-      {
-        quantityTypeOne: 0,
-        quantityTypeTwo: 0,
-        quantityTypeThree: 0,
-      },
-    );
+    const body = {
+      quantityTypeOne: dataCup[0].noodleLeft,
+      quantityTypeTwo: dataCup[1].noodleLeft,
+      quantityTypeThree: dataCup[2].noodleLeft,
+    };
+
+    return body;
   };
 
   const submit = async () => {
     try {
+      const dayNow = new Date();
       const data = selector.noodel.data;
-      const update = await data.map(ele => 
-        ele.status && ele.noodleLeft !== 0
-          ? {...ele, noodleLeft: ele.noodleLeft - 1, status: false}
+      const update = await data.map(ele =>
+        ele.status && (!ele.noodleLeft || ele.noodleLeft == "null")
+          ? {...ele, noodleLeft: dayNow.toISOString(), status: false}
           : ele,
       );
       dispatch(updateData(update));
@@ -70,12 +56,53 @@ const PageInfor = () => {
     }
   };
 
+  const checkDate = (date: string) => {
+    const dateNow = new Date();
+    const dateCup = new Date(date);
+
+    // Tính toán khoảng cách giữa hai ngày theo tháng
+    const diffMonths =
+      (dateNow.getFullYear() - dateCup.getFullYear()) * 12 +
+      (dateNow.getMonth() - dateCup.getMonth());
+
+    return diffMonths >= 1;
+
+    // const diffMilliseconds = dateNow.getTime() - dateCup.getTime(); // Tính khoảng cách theo milliseconds
+    // return diffMilliseconds >= 15000;
+  };
+
+  const check = (noodles: {
+    quantityTypeOne: string | null;
+    quantityTypeTwo: string | null;
+    quantityTypeThree: string | null;
+  }) => {
+    let countCheck = 0;
+    if (noodles.quantityTypeOne && checkDate(noodles.quantityTypeOne))
+      countCheck += 1;
+
+    if (noodles.quantityTypeTwo && checkDate(noodles.quantityTypeTwo))
+      countCheck += 1;
+
+    if (noodles.quantityTypeThree && checkDate(noodles.quantityTypeThree))
+      countCheck += 1;
+
+    return countCheck > 0;
+  };
+
   useEffect(() => {
     if (selector.code.code) {
       const data = getInfo(selector.code?.code);
       data
-        .then((data: any) => {
-          dispatch(updateQuantity(data?.noodles));
+        .then(async (data: any) => {
+          if (check(data.noodles) && selector.code.code) {
+            await updateInfo(selector.code?.code, {
+              quantityTypeOne: "null",
+              quantityTypeTwo: "null",
+              quantityTypeThree: "null",
+            });
+          } else {
+            dispatch(updateQuantity(data?.noodles));
+          }
         })
         .catch(data => {
           console.log(data);

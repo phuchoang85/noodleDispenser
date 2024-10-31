@@ -8,7 +8,7 @@ const RenderCup = ({
   _handleSelectCup,
 }: {
   item: DATACUP;
-  _handleSelectCup: (id: number, noodleLeft: number, status: boolean) => void;
+  _handleSelectCup: (id: number, noodleLeft: string | null, status: boolean) => void;
 }) => {
   const imagereturn = () => {
     if (item.id === 1) {
@@ -23,7 +23,7 @@ const RenderCup = ({
     <TouchableOpacity
       onPress={() => _handleSelectCup(item.id, item.noodleLeft, item.status)}
       className="w-20 h-36 items-center justify-center relative">
-      {item.noodleLeft !== 0 ? (
+      {!item.noodleLeft || item.noodleLeft == "null" ? (
         <>
           <Image
             className="w-20 h-36 z-20"
@@ -42,7 +42,7 @@ const RenderCup = ({
           <Text className="text-gray font-payone text-xs">Unavailable</Text>
         </>
       )}
-      {item.status && item.noodleLeft !== 0 && (
+      {item.status && (!item.noodleLeft || item.noodleLeft == "null") && (
         <Image
           className="w-24 h-24 absolute self-center z-0"
           resizeMode="contain"

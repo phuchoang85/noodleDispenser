@@ -11,21 +11,20 @@ const initialState: initial = {
     {
       id: 1,
       status: false,
-      noodleLeft: 0,
+      noodleLeft: null,
     },
     {
       id: 2,
       status: false,
-      noodleLeft: 0,
+      noodleLeft: null,
     },
     {
       id: 3,
       status: false,
-      noodleLeft: 0,
+      noodleLeft: null,
     },
   ],
 };
-
 const noodelSlice = createSlice({
   name: 'noodel',
   initialState,

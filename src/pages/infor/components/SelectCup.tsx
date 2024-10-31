@@ -5,24 +5,18 @@ import RenderCup from './RenderCup';
 import {useAppDispatch} from '@Src/redux/useRedux';
 import {updateStatus} from '@Src/redux/selector/NoodlesSlice';
 
-const SelectCup = ({
-  dataCup,
-}: {
-  dataCup: DATACUP[];
-}) => {
+const SelectCup = ({dataCup}: {dataCup: DATACUP[]}) => {
   const dispatch = useAppDispatch();
-  const countCup = dataCup.reduce((first: DATACUP, second: DATACUP) => {
-    return {
-      ...first,
-      noodleLeft: first.noodleLeft + second.noodleLeft,
-    };
-  });
+  const countCup =
+    (!dataCup[0].noodleLeft || dataCup[0].noodleLeft == "null"  ? 1 : 0) +
+    (!dataCup[1].noodleLeft || dataCup[1].noodleLeft == "null" ? 1 : 0) +
+    (!dataCup[2].noodleLeft || dataCup[2].noodleLeft == "null" ? 1 : 0);
   const _handleSelectCup = (
     id: number,
-    noodleLeft: number,
+    noodleLeft: string | null,
     status: boolean,
   ) => {
-    if (noodleLeft !== 0) {
+    if (!noodleLeft || noodleLeft == "null") {
       dispatch(updateStatus({id: id, status: !status}));
     }
   };
@@ -39,7 +33,7 @@ const SelectCup = ({
       </View>
       <Text className="font-payone text-xs text-color_brown_left">
         <Text className="font-payone text-lg text-color_red_left">
-          {countCup.noodleLeft + ' '}
+          {countCup + ' '}
         </Text>
         cups of noodles left this month
       </Text>
